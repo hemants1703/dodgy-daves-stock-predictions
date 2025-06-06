@@ -170,6 +170,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - GitHub: [@hemants1703](https://github.com/hemants1703)
 - LinkedIn: [Hemant Sharma](https://www.linkedin.com/in/hemants1703/)
+- X _(formerly Twitter)_ : [@hemants1703](https://x.com/hemants1703)
 
 ---
 
