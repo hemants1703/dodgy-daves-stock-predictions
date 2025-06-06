@@ -2,16 +2,18 @@
 
 > **Disclaimer**: This is NOT real financial advice. "Always correct 15% of the time" - as advertised!
 
-A modern, full-stack stock analysis application that combines real-time market data with AI-powered prediction capabilities. Built with Next.js 15, TypeScript, and integrated with the Polygon.io API for live stock market data.
+A modern, full-stack stock analysis application that combines real-time market data with AI-powered prediction capabilities. Built with Next.js 15, TypeScript, and integrated with the Polygon.io API for live stock market data and OpenAI for AI-powered analysis.
 
 ## 🚀 Features
 
 - **Real-time Stock Data**: Fetches live market data using Polygon.io API
+- **AI-Powered Analysis**: GPT-4 powered stock analysis and predictions
 - **Multi-ticker Analysis**: Add up to 3 stock tickers for comparative analysis
 - **Modern UI/UX**: Built with Radix UI components and Tailwind CSS
 - **Responsive Design**: Fully responsive interface with mobile-first approach
 - **Error Handling**: Comprehensive error handling with toast notifications
 - **Type Safety**: Full TypeScript implementation for robust development
+- **Markdown Support**: Beautifully formatted reports using React Markdown
 
 ## 🛠️ Tech Stack
 
@@ -21,11 +23,12 @@ A modern, full-stack stock analysis application that combines real-time market d
 - **Tailwind CSS 4** - Utility-first CSS framework
 - **Radix UI** - Accessible component and icons library
 - **Sonner** - Toast notifications
-- **Lucide Icons** - Beautiful SVG icons
+- **React Markdown** - Markdown rendering for reports
 
 ### Backend
 - **Next.js Route Handlers** - Serverless API endpoints
 - **Polygon.io API** - Real-time financial data
+- **OpenAI API** - GPT-4 powered stock analysis
 - **Server-side Processing** - Data fetching and manipulation
 
 ### Development Tools
@@ -39,7 +42,7 @@ A modern, full-stack stock analysis application that combines real-time market d
 app/
 ├── api/
 │   ├── fetch-stock-data/     # Real-time stock data retrieval
-│   └── fetch-ai-stock-report/ # AI-powered analysis (in development)
+│   └── fetch-ai-stock-report/ # AI-powered analysis with OpenAI
 ├── components/
 │   └── ui/                   # Reusable UI components
 ├── lib/
@@ -53,6 +56,7 @@ app/
 - Node.js 18+ 
 - npm/yarn/pnpm/bun
 - Polygon.io API key
+- OpenAI API key
 
 ### Installation
 
@@ -73,9 +77,10 @@ app/
    ```bash
    cp .env.example .env.local
    ```
-   Add your Polygon.io API key:
+   Add your API keys:
    ```
-   POLYGON_API_KEY=your_api_key_here
+   POLYGON_API_KEY=your_polygon_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here
    ```
 
 4. **Run the development server**
@@ -90,8 +95,9 @@ app/
 
 1. **Add Stock Tickers**: Enter stock symbols (e.g., TSLA, AAPL, GOOGL) in the input field
 2. **Manage Your List**: Add multiple tickers and remove them as needed
-3. **Generate Report**: Click "GENERATE REPORT" to fetch real-time data
-4. **View Analysis**: Review the stock data and predictions (AI analysis coming soon)
+3. **Generate Report**: Click "GENERATE REPORT" to fetch real-time data and AI analysis
+4. **View Analysis**: Review the AI-generated stock analysis and predictions
+5. **Copy Report**: Easily copy the generated report to clipboard
 
 ## 🔧 API Endpoints
 
@@ -105,12 +111,13 @@ Fetches real-time stock data for provided tickers.
 }
 ```
 
-**Response:**
+### POST `/api/fetch-ai-stock-report`
+Generates AI-powered stock analysis using GPT-4.
+
+**Request Body:**
 ```json
 {
-  "status": 200,
-  "success": true,
-  "data": [...] // Polygon.io stock data
+  "stockData": [...] // Stock data from Polygon.io
 }
 ```
 
@@ -123,6 +130,7 @@ Fetches real-time stock data for provided tickers.
 
 ### 2. **API Integration**
 - Seamless integration with Polygon.io financial API
+- OpenAI GPT-4 integration for intelligent analysis
 - Asynchronous data fetching with error handling
 - Environment-based configuration
 
@@ -130,6 +138,7 @@ Fetches real-time stock data for provided tickers.
 - Intuitive interface with real-time feedback
 - Comprehensive error states and loading indicators
 - Accessible design with Radix UI primitives
+- Markdown-formatted reports for better readability
 
 ### 4. **Code Quality**
 - TypeScript for type safety and better developer experience
@@ -140,16 +149,6 @@ Fetches real-time stock data for provided tickers.
 - Turbopack for fast development builds
 - Efficient state management and re-rendering
 - Responsive design with mobile optimization
-
-## 🚧 Roadmap
-
-- [ ] Complete AI-powered stock prediction analysis
-- [ ] Add data visualization with charts and graphs
-- [ ] Implement user authentication and portfolio tracking
-- [ ] Add historical data analysis and trend detection
-- [ ] Integrate machine learning models for prediction accuracy
-- [ ] Add real-time WebSocket updates
-- [ ] Implement caching for improved performance
 
 ## 🤝 Contributing
 
@@ -169,9 +168,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Hemant Sharma** - AI Engineer
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+- GitHub: [@hemants1703](https://github.com/hemants1703)
+- LinkedIn: [Hemant Sharma](https://www.linkedin.com/in/hemants1703/)
 
 ---
 
